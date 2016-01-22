@@ -65,5 +65,23 @@ Sorting 100 MiB: 15188.299 milliseconds = 6.904 MB/s = 6.584 MiB/s
 
 
 
+C:\!FreeArc\public\MT-LZ>TestRadixSort64-1-halves.exe
 
+Counting: 81.449 milliseconds = 1287.404 MB/s = 1227.764 MiB/s
+Sorting 100 MiB: 1161.727 milliseconds = 90.260 MB/s = 86.079 MiB/s
+
+Counting: 130.753 milliseconds = 801.949 MB/s = 764.798 MiB/s
+Sorting 100 MiB: 1362.746 milliseconds = 76.946 MB/s = 73.381 MiB/s
+
+Counting: 63.610 milliseconds = 1648.445 MB/s = 1572.080 MiB/s
+Sorting 100 MiB: 1340.049 milliseconds = 78.249 MB/s = 74.624 MiB/s
+
+Counting: 91.625 milliseconds = 1144.423 MB/s = 1091.407 MiB/s
+Sorting 100 MiB: 2064.541 milliseconds = 50.790 MB/s = 48.437 MiB/s
+
+Counting: 345.874 milliseconds = 303.167 MB/s = 289.123 MiB/s
+Sorting 100 MiB: 3334.380 milliseconds = 31.447 MB/s = 29.991 MiB/s
+
+Counting: 1315.501 milliseconds = 79.709 MB/s = 76.017 MiB/s
+Sorting 100 MiB: 10193.452 milliseconds = 10.287 MB/s = 9.810 MiB/s
 
