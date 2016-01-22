@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <memory.h>
+#include <x86intrin.h>
 #include "Common.h"
 
 template <typename Key, typename Data, int SortBase, int SortBits>
@@ -37,6 +38,14 @@ void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *Out
         TempData[index] = InData[i];
         if (cnt[bin]%N == N-1)
         {
+            auto memcpy = [] (void* outp, void* inp, size_t size) 
+            {
+                __m128i* out = (__m128i*) outp;
+                __m128i* in  = (__m128i*) inp;
+                for (size_t i=0; i<size/sizeof(__m128i); i++)
+                    _mm_stream_si128(out++, *in++);
+            };
+
             index -= N-1;
             auto out = cnt[bin] - (N-1);
             memcpy (OutKey +out, TempKey +index, N*sizeof(Key));
