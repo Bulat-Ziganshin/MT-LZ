@@ -1,0 +1,69 @@
+
+C:\!FreeArc\public\MT-LZ>TestRadixSort64-1-key.exe
+Counting: 142.770 milliseconds = 734.453 MB/s = 700.429 MiB/s
+Sorting 100 MiB: 1073.322 milliseconds = 97.694 MB/s = 93.169 MiB/s
+
+Counting: 97.973 milliseconds = 1070.270 MB/s = 1020.689 MiB/s
+Sorting 100 MiB: 1228.290 milliseconds = 85.369 MB/s = 81.414 MiB/s
+
+Counting: 73.227 milliseconds = 1431.944 MB/s = 1365.608 MiB/s
+Sorting 100 MiB: 1547.593 milliseconds = 67.755 MB/s = 64.616 MiB/s
+
+Counting: 136.193 milliseconds = 769.917 MB/s = 734.250 MiB/s
+Sorting 100 MiB: 1888.080 milliseconds = 55.537 MB/s = 52.964 MiB/s
+
+Counting: 353.308 milliseconds = 296.788 MB/s = 283.039 MiB/s
+Sorting 100 MiB: 2482.249 milliseconds = 42.243 MB/s = 40.286 MiB/s
+
+Counting: 1358.569 milliseconds = 77.182 MB/s = 73.607 MiB/s
+Sorting 100 MiB: 12643.636 milliseconds = 8.293 MB/s = 7.909 MiB/s
+
+
+
+C:\!FreeArc\public\MT-LZ>TestRadixSort64-1.exe
+Counting: 75.989 milliseconds = 1379.898 MB/s = 1315.973 MiB/s
+Sorting 100 MiB: 1625.649 milliseconds = 64.502 MB/s = 61.514 MiB/s
+
+Counting: 81.664 milliseconds = 1284.009 MB/s = 1224.526 MiB/s
+Sorting 100 MiB: 2345.819 milliseconds = 44.700 MB/s = 42.629 MiB/s
+
+Counting: 61.526 milliseconds = 1704.276 MB/s = 1625.325 MiB/s
+Sorting 100 MiB: 2519.134 milliseconds = 41.624 MB/s = 39.696 MiB/s
+
+Counting: 90.435 milliseconds = 1159.478 MB/s = 1105.765 MiB/s
+Sorting 100 MiB: 4094.906 milliseconds = 25.607 MB/s = 24.421 MiB/s
+
+Counting: 344.632 milliseconds = 304.259 MB/s = 290.164 MiB/s
+Sorting 100 MiB: 5438.363 milliseconds = 19.281 MB/s = 18.388 MiB/s
+
+Counting: 1270.305 milliseconds = 82.545 MB/s = 78.721 MiB/s
+Sorting 100 MiB: 17179.872 milliseconds = 6.104 MB/s = 5.821 MiB/s
+
+
+
+C:\!FreeArc\public\MT-LZ>TestRadixSort32-1.exe
+Counting: 66.881 milliseconds = 1567.821 MB/s = 1495.191 MiB/s
+Sorting 100 MiB: 1643.589 milliseconds = 63.798 MB/s = 60.842 MiB/s
+
+Counting: 76.054 milliseconds = 1378.723 MB/s = 1314.852 MiB/s
+Sorting 100 MiB: 2343.433 milliseconds = 44.745 MB/s = 42.672 MiB/s
+
+Counting: 86.658 milliseconds = 1210.013 MB/s = 1153.958 MiB/s
+Sorting 100 MiB: 2589.002 milliseconds = 40.501 MB/s = 38.625 MiB/s
+
+Counting: 78.211 milliseconds = 1340.708 MB/s = 1278.599 MiB/s
+Sorting 100 MiB: 4084.542 milliseconds = 25.672 MB/s = 24.483 MiB/s
+
+Counting: 304.064 milliseconds = 344.854 MB/s = 328.879 MiB/s
+Sorting 100 MiB: 5435.873 milliseconds = 19.290 MB/s = 18.396 MiB/s
+
+Counting: 371.324 milliseconds = 282.389 MB/s = 269.307 MiB/s
+Sorting 100 MiB: 15188.299 milliseconds = 6.904 MB/s = 6.584 MiB/s
+
+
+
+
+
+
+
+
