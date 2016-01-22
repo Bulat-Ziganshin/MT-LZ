@@ -218,3 +218,23 @@ Counting: 347.164 milliseconds = 302.040 MB/s = 288.048 MiB/s
 Sorting 100 MiB: 3890.231 milliseconds = 26.954 MB/s = 25.705 MiB/s
 
 
+
+
+C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 -mavx2 TestRadixSort.cpp && p64.exe -pr -tb TestRadixSort64-3-MOVNT-64bytes.exe
+Sorting 100 MiB
+ 4:   86.853 ms :   553.029 ms = 189.606 MB/s = 180.822 MiB/s :  4
+ 5:  123.984 ms :   628.655 ms = 166.797 MB/s = 159.070 MiB/s :  5
+ 6:   73.935 ms :   578.239 ms = 181.340 MB/s = 172.939 MiB/s :  6
+ 7:   77.924 ms :   685.814 ms = 152.895 MB/s = 145.812 MiB/s :  7
+ 8:   60.122 ms :   837.276 ms = 125.237 MB/s = 119.435 MiB/s :  8
+ 9:   81.015 ms :  1037.517 ms = 101.066 MB/s =  96.384 MiB/s :  9
+10:   90.677 ms :  1120.960 ms =  93.543 MB/s =  89.209 MiB/s : 10
+11:   78.995 ms :  1458.755 ms =  71.882 MB/s =  68.552 MiB/s : 11
+12:  132.190 ms :  1849.172 ms =  56.705 MB/s =  54.078 MiB/s : 12
+13:  175.518 ms :  2049.404 ms =  51.165 MB/s =  48.795 MiB/s : 13
+14:  208.125 ms :  2291.008 ms =  45.769 MB/s =  43.649 MiB/s : 14
+15:  222.617 ms :  2648.457 ms =  39.592 MB/s =  37.758 MiB/s : 15
+16:  333.451 ms :  4081.906 ms =  25.688 MB/s =  24.498 MiB/s : 16
+17:  355.961 ms :  4659.176 ms =  22.506 MB/s =  21.463 MiB/s : 17
+18:  345.980 ms :  6628.254 ms =  15.820 MB/s =  15.087 MiB/s : 18
+19:  414.801 ms : 10450.760 ms =  10.033 MB/s =   9.569 MiB/s : 19

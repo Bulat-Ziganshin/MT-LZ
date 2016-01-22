@@ -16,8 +16,7 @@ void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *Out
     size_t cnt[SortBins] = {0};  auto p = InKey;
     for (size_t i=0; i<size; i++)
         cnt[key(InKey[i])]++;
-    t.Stop();  double speed = size/(t.Elapsed()/1000);
-    printf("Counting: %.3lf milliseconds = %.3lf MB/s = %.3lf MiB/s\n", t.Elapsed(), speed/1e6, speed/(1<<20));
+    t.Stop();  printf("%8.3lf", t.Elapsed());
     
     // Inclusive scan of cnt[] => compute first output position for every bin
     for (size_t i=0,sum=0; i<SortBins; i++)
