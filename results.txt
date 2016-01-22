@@ -85,3 +85,89 @@ Sorting 100 MiB: 3334.380 milliseconds = 31.447 MB/s = 29.991 MiB/s
 Counting: 1315.501 milliseconds = 79.709 MB/s = 76.017 MiB/s
 Sorting 100 MiB: 10193.452 milliseconds = 10.287 MB/s = 9.810 MiB/s
 
+
+
+
+
+C:\!FreeArc\public\MT-LZ>TestRadixSort64-1-mod256.exe                       [cnt[bin]%256]
+Counting: 81.417 milliseconds = 1287.905 MB/s = 1228.241 MiB/s
+Sorting 100 MiB: 286.124 milliseconds = 366.476 MB/s = 349.499 MiB/s
+
+Counting: 82.447 milliseconds = 1271.819 MB/s = 1212.902 MiB/s
+Sorting 100 MiB: 305.066 milliseconds = 343.721 MB/s = 327.798 MiB/s
+
+Counting: 71.945 milliseconds = 1457.469 MB/s = 1389.951 MiB/s
+Sorting 100 MiB: 220.836 milliseconds = 474.822 MB/s = 452.826 MiB/s
+
+Counting: 90.838 milliseconds = 1154.333 MB/s = 1100.858 MiB/s
+Sorting 100 MiB: 254.304 milliseconds = 412.332 MB/s = 393.231 MiB/s
+
+Counting: 357.194 milliseconds = 293.559 MB/s = 279.960 MiB/s
+Sorting 100 MiB: 763.479 milliseconds = 137.342 MB/s = 130.979 MiB/s
+
+Counting: 1353.837 milliseconds = 77.452 MB/s = 73.864 MiB/s
+Sorting 100 MiB: 10141.480 milliseconds = 10.339 MB/s = 9.860 MiB/s
+
+
+C:\!FreeArc\public\MT-LZ>TestRadixSort64-1-halves-mod256.exe                [cnt[bin]%256] + InKey2
+Counting: 79.426 milliseconds = 1320.194 MB/s = 1259.035 MiB/s
+Sorting 100 MiB: 300.871 milliseconds = 348.514 MB/s = 332.368 MiB/s
+
+Counting: 97.443 milliseconds = 1076.094 MB/s = 1026.243 MiB/s
+Sorting 100 MiB: 255.852 milliseconds = 409.836 MB/s = 390.851 MiB/s
+
+Counting: 63.515 milliseconds = 1650.900 MB/s = 1574.421 MiB/s
+Sorting 100 MiB: 210.918 milliseconds = 497.149 MB/s = 474.118 MiB/s
+
+Counting: 92.170 milliseconds = 1137.653 MB/s = 1084.950 MiB/s
+Sorting 100 MiB: 261.245 milliseconds = 401.377 MB/s = 382.783 MiB/s
+
+Counting: 350.810 milliseconds = 298.901 MB/s = 285.055 MiB/s
+Sorting 100 MiB: 662.664 milliseconds = 158.236 MB/s = 150.906 MiB/s
+
+Counting: 1340.915 milliseconds = 78.199 MB/s = 74.576 MiB/s
+Sorting 100 MiB: 6249.199 milliseconds = 16.779 MB/s = 16.002 MiB/s
+
+
+
+
+
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestRadixSort64.exe                    [cnt[bin]%16384]
+Counting: 81.394 milliseconds = 1288.267 MB/s = 1228.587 MiB/s
+Sorting 100 MiB: 295.823 milliseconds = 354.461 MB/s = 338.040 MiB/s
+
+Counting: 78.118 milliseconds = 1342.306 MB/s = 1280.123 MiB/s
+Sorting 100 MiB: 232.482 milliseconds = 451.035 MB/s = 430.140 MiB/s
+
+Counting: 61.115 milliseconds = 1715.744 MB/s = 1636.261 MiB/s
+Sorting 100 MiB: 210.462 milliseconds = 498.225 MB/s = 475.145 MiB/s
+
+Counting: 90.008 milliseconds = 1164.981 MB/s = 1111.013 MiB/s
+Sorting 100 MiB: 1321.228 milliseconds = 79.364 MB/s = 75.687 MiB/s
+
+Counting: 345.214 milliseconds = 303.746 MB/s = 289.675 MiB/s
+Sorting 100 MiB: 1060.277 milliseconds = 98.896 MB/s = 94.315 MiB/s
+
+Counting: 1271.862 milliseconds = 82.444 MB/s = 78.625 MiB/s
+Sorting 100 MiB: 9339.981 milliseconds = 11.227 MB/s = 10.707 MiB/s
+
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestRadixSort64.exe                    [cnt[bin]%16384] + InKey2
+Counting: 78.215 milliseconds = 1340.631 MB/s = 1278.525 MiB/s
+Sorting 100 MiB: 298.433 milliseconds = 351.361 MB/s = 335.084 MiB/s
+
+Counting: 79.433 milliseconds = 1320.079 MB/s = 1258.926 MiB/s
+Sorting 100 MiB: 263.698 milliseconds = 397.643 MB/s = 379.222 MiB/s
+
+Counting: 74.872 milliseconds = 1400.485 MB/s = 1335.607 MiB/s
+Sorting 100 MiB: 226.682 milliseconds = 462.576 MB/s = 441.147 MiB/s
+
+Counting: 84.950 milliseconds = 1234.343 MB/s = 1177.162 MiB/s
+Sorting 100 MiB: 787.968 milliseconds = 133.073 MB/s = 126.909 MiB/s
+
+Counting: 345.441 milliseconds = 303.547 MB/s = 289.485 MiB/s
+Sorting 100 MiB: 870.087 milliseconds = 120.514 MB/s = 114.931 MiB/s
+
+Counting: 1220.833 milliseconds = 85.890 MB/s = 81.911 MiB/s
+Sorting 100 MiB: 5747.024 milliseconds = 18.246 MB/s = 17.400 MiB/s

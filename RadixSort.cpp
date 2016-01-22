@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <memory.h>
+#include "Common.h"
 
 template <typename Key, typename Data, int SortBase, int SortBits>
 void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *OutData, size_t size)
@@ -26,18 +27,12 @@ void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *Out
     }
         
     // Fill OutKey & OutData
-    auto InKey2  = InKey+size/2;
-    auto InData2 = InData+size/2;
-    for (size_t i=0; i<size/2; i++)
+    for (size_t i=0; i<size; i++)
     {
+        const size_t N = 8*1024;
         auto bin = key(InKey[i]);
-        OutKey [cnt[bin]] = InKey[i];
-        OutData[cnt[bin]] = InData[i];
-        cnt[bin]++;
-        bin = key(InKey2[i]);
-        OutKey [cnt[bin]] = InKey2[i];
-        OutData[cnt[bin]] = InData2[i];
+        OutKey [cnt[bin]%N] = InKey[i];
+        OutData[cnt[bin]%N] = InData[i];
         cnt[bin]++;
     }
 }
-
