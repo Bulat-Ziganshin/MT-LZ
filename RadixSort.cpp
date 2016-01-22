@@ -40,7 +40,7 @@ void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *Out
             index -= N-1;
             auto out = cnt[bin] - (N-1);
             memcpy (OutKey +out, TempKey +index, N*sizeof(Key));
-            memcpy (OutData+out, TempData+index, N*sizeof(Key));
+            memcpy (OutData+out, TempData+index, N*sizeof(Data));
         }
         cnt[bin]++;
     }
