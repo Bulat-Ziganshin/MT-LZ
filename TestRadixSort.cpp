@@ -54,13 +54,5 @@ int main()
     printf("Sorting %d MiB", int(DATASET>>20));
     printf(": %.3lf milliseconds = %.3lf MB/s = %.3lf MiB/s\n\n", t.Elapsed(), speed/1e6, speed/(1<<20));
 
-    for (size_t i=0; i<DATASET; i++)
-        keys[i] = i*123456791;
-    t.Start();
-    RadixSortPass<Key,Data,0,20> (keys, data, outkeys, outdata, DATASET);
-    t.Stop();  speed = DATASET/(t.Elapsed()/1000);
-    printf("Sorting %d MiB", int(DATASET>>20));
-    printf(": %.3lf milliseconds = %.3lf MB/s = %.3lf MiB/s\n\n", t.Elapsed(), speed/1e6, speed/(1<<20));
-
     return 0;
 }

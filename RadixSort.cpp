@@ -27,12 +27,21 @@ void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *Out
     }
         
     // Fill OutKey & OutData
+    const size_t N = 16;
+    Key TempKey[SortBins*N];  Data TempData[SortBins*N];
     for (size_t i=0; i<size; i++)
     {
-        const size_t N = 8*1024;
         auto bin = key(InKey[i]);
-        OutKey [cnt[bin]%N] = InKey[i];
-        OutData[cnt[bin]%N] = InData[i];
+        auto index = bin*N + cnt[bin]%N;
+        TempKey [index] = InKey[i];
+        TempData[index] = InData[i];
+        if (cnt[bin]%N == N-1)
+        {
+            index -= N-1;
+            auto out = cnt[bin] - (N-1);
+            memcpy (OutKey +out, TempKey +index, N*sizeof(Key));
+            memcpy (OutData+out, TempData+index, N*sizeof(Key));
+        }
         cnt[bin]++;
     }
 }

@@ -171,3 +171,50 @@ Sorting 100 MiB: 870.087 milliseconds = 120.514 MB/s = 114.931 MiB/s
 
 Counting: 1220.833 milliseconds = 85.890 MB/s = 81.911 MiB/s
 Sorting 100 MiB: 5747.024 milliseconds = 18.246 MB/s = 17.400 MiB/s
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\!FreeArc\public\MT-LZ>TestRadixSort64-2-memcpy-32bytes.exe
+Counting: 79.301 milliseconds = 1322.276 MB/s = 1261.020 MiB/s
+Sorting 100 MiB: 764.050 milliseconds = 137.239 MB/s = 130.881 MiB/s
+
+Counting: 77.470 milliseconds = 1353.524 MB/s = 1290.821 MiB/s
+Sorting 100 MiB: 565.236 milliseconds = 185.511 MB/s = 176.917 MiB/s
+
+Counting: 101.544 milliseconds = 1032.631 MB/s = 984.793 MiB/s
+Sorting 100 MiB: 599.877 milliseconds = 174.799 MB/s = 166.701 MiB/s
+
+Counting: 87.664 milliseconds = 1196.124 MB/s = 1140.713 MiB/s
+Sorting 100 MiB: 1250.430 milliseconds = 83.857 MB/s = 79.972 MiB/s
+
+Counting: 330.821 milliseconds = 316.962 MB/s = 302.279 MiB/s
+Sorting 100 MiB: 3658.499 milliseconds = 28.661 MB/s = 27.334 MiB/s
+
+
+C:\!FreeArc\public\MT-LZ>TestRadixSort64-2-memcpy-64bytes.exe
+Counting: 77.920 milliseconds = 1345.711 MB/s = 1283.370 MiB/s
+Sorting 100 MiB: 674.192 milliseconds = 155.531 MB/s = 148.326 MiB/s
+
+Counting: 79.229 milliseconds = 1323.467 MB/s = 1262.157 MiB/s
+Sorting 100 MiB: 431.803 milliseconds = 242.836 MB/s = 231.587 MiB/s
+
+Counting: 54.485 milliseconds = 1924.508 MB/s = 1835.354 MiB/s
+Sorting 100 MiB: 646.717 milliseconds = 162.138 MB/s = 154.627 MiB/s
+
+Counting: 87.237 milliseconds = 1201.982 MB/s = 1146.299 MiB/s
+Sorting 100 MiB: 1614.217 milliseconds = 64.959 MB/s = 61.950 MiB/s
+
+Counting: 347.164 milliseconds = 302.040 MB/s = 288.048 MiB/s
+Sorting 100 MiB: 3890.231 milliseconds = 26.954 MB/s = 25.705 MiB/s
+
+
