@@ -13,9 +13,10 @@ void BENCHMARK (Key *keys, Data *data, Key *outkeys, Data *outdata, size_t size)
         keys[i] = i*123456791;
     printf("%2d: ", Bits, int(size>>20));
     t.Start();
-    RadixSortPass<Key,Data,0,Bits> (keys, data, outkeys, outdata, size);
+//    RadixSortPass<Key,Data,0,Bits> (keys, data, outkeys, outdata, size);
+    RadixSortPass<Key,0,Bits> (keys, outkeys, size);
     t.Stop();  speed = size/(t.Elapsed()/1000);
-    printf(" ms : %9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s : %2d\n", t.Elapsed(), speed/1e6, speed/(1<<20), Bits);
+    printf("%9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s : %2d\n", t.Elapsed(), speed/1e6, speed/(1<<20), Bits);
 }
 
 int main()
@@ -42,6 +43,19 @@ int main()
     BENCHMARK<17>(keys, data, outkeys, outdata, size);
     BENCHMARK<18>(keys, data, outkeys, outdata, size);
     BENCHMARK<19>(keys, data, outkeys, outdata, size);
+
+    printf("\n");
+    for (int Bytes=1; Bytes<=4; Bytes++)
+    {
+        Timer t;  double speed;  //int Bytes=4;
+        for (size_t i=0; i<size; i++)
+            keys[i] = i*123456791;
+        printf("%1dB: ", Bytes, int(size>>20));
+        t.Start();
+        RadixSort (keys, outkeys, size, 0, Bytes);
+        t.Stop();  speed = size/(t.Elapsed()/1000);
+        printf("%9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n", t.Elapsed(), speed/1e6, speed/(1<<20));
+    }
 
     delete[] keys; delete[] data; delete[] outkeys; delete[] outdata;
     return 0;

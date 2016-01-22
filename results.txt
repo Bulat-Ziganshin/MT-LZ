@@ -221,7 +221,7 @@ Sorting 100 MiB: 3890.231 milliseconds = 26.954 MB/s = 25.705 MiB/s
 
 
 C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 -mavx2 TestRadixSort.cpp && p64.exe -pr -tb TestRadixSort64-3-MOVNT-64bytes.exe
-Sorting 100 MiB                                                   
+Sorting 100 MiB
  4:   81.612 ms :   542.456 ms = 193.301 MB/s = 184.347 MiB/s :  4
  5:   75.810 ms :   445.919 ms = 235.150 MB/s = 224.256 MiB/s :  5
  6:   77.738 ms :   378.707 ms = 276.883 MB/s = 264.057 MiB/s :  6
@@ -259,7 +259,7 @@ C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadix
 18:  414.381 ms :  5274.170 ms =  19.881 MB/s =  18.960 MiB/s : 18
 19:  457.799 ms :  8443.927 ms =  12.418 MB/s =  11.843 MiB/s : 19
 
-C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadixSort.cpp -o TestRadixSort64.exe && p64.exe -pr -tb TestRadixSort64.exe      32-bit key only
+C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadixSort.cpp -o TestRadixSort64.exe && TestRadixSort64.exe      32-bit key only
  4:   77.455 ms :   333.653 ms = 314.271 MB/s = 299.712 MiB/s :  4
  5:   99.017 ms :   341.706 ms = 306.865 MB/s = 292.649 MiB/s :  5
  6:   78.492 ms :   287.893 ms = 364.224 MB/s = 347.351 MiB/s :  6
@@ -276,3 +276,54 @@ C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadix
 17:  326.674 ms :  2515.079 ms =  41.692 MB/s =  39.760 MiB/s : 17
 18:  360.426 ms :  3695.833 ms =  28.372 MB/s =  27.057 MiB/s : 18
 19:  390.548 ms :  7154.211 ms =  14.657 MB/s =  13.978 MiB/s : 19
+
+
+
+
+C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadixSort.cpp -o TestRadixSort64.exe && TestRadixSort64.exe    64-bit key: added multi-pass radix sorting routine
+ 4:   481.813 ms = 217.631 MB/s = 207.549 MiB/s :  4
+ 5:   320.289 ms = 327.385 MB/s = 312.218 MiB/s :  5
+ 6:   350.303 ms = 299.334 MB/s = 285.467 MiB/s :  6
+ 7:   364.041 ms = 288.038 MB/s = 274.695 MiB/s :  7
+ 8:   411.468 ms = 254.838 MB/s = 243.032 MiB/s :  8
+ 9:   569.416 ms = 184.149 MB/s = 175.618 MiB/s :  9
+10:   667.093 ms = 157.186 MB/s = 149.904 MiB/s : 10
+11:   744.122 ms = 140.915 MB/s = 134.387 MiB/s : 11
+12:  1062.603 ms =  98.680 MB/s =  94.109 MiB/s : 12
+13:  1390.804 ms =  75.394 MB/s =  71.901 MiB/s : 13
+14:  1591.799 ms =  65.874 MB/s =  62.822 MiB/s : 14
+15:  1963.166 ms =  53.412 MB/s =  50.938 MiB/s : 15
+16:  2451.421 ms =  42.774 MB/s =  40.793 MiB/s : 16
+17:  3143.448 ms =  33.358 MB/s =  31.812 MiB/s : 17
+18:  5222.691 ms =  20.077 MB/s =  19.147 MiB/s : 18
+19:  8192.036 ms =  12.800 MB/s =  12.207 MiB/s : 19
+
+1B:   346.987 ms = 302.195 MB/s = 288.195 MiB/s
+2B:   731.834 ms = 143.281 MB/s = 136.643 MiB/s
+3B:  1189.361 ms =  88.163 MB/s =  84.079 MiB/s
+4B:  1516.229 ms =  69.157 MB/s =  65.953 MiB/s
+
+
+
+C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadixSort.cpp -o TestRadixSort64.exe && TestRadixSort64.exe    32-bit key: added multi-pass radix sorting routine
+ 4:   340.609 ms = 307.853 MB/s = 293.592 MiB/s :  4
+ 5:   272.768 ms = 384.420 MB/s = 366.611 MiB/s :  5
+ 6:   274.895 ms = 381.446 MB/s = 363.775 MiB/s :  6
+ 7:   296.280 ms = 353.914 MB/s = 337.518 MiB/s :  7
+ 8:   267.281 ms = 392.313 MB/s = 374.139 MiB/s :  8
+ 9:   512.793 ms = 204.483 MB/s = 195.010 MiB/s :  9
+10:   580.587 ms = 180.606 MB/s = 172.239 MiB/s : 10
+11:   639.608 ms = 163.940 MB/s = 156.346 MiB/s : 11
+12:   963.369 ms = 108.845 MB/s = 103.802 MiB/s : 12
+13:  1387.731 ms =  75.560 MB/s =  72.060 MiB/s : 13
+14:  1504.816 ms =  69.681 MB/s =  66.453 MiB/s : 14
+15:  1573.207 ms =  66.652 MB/s =  63.564 MiB/s : 15
+16:  2067.824 ms =  50.709 MB/s =  48.360 MiB/s : 16
+17:  2501.953 ms =  41.910 MB/s =  39.969 MiB/s : 17
+18:  3655.003 ms =  28.689 MB/s =  27.360 MiB/s : 18
+19:  6972.839 ms =  15.038 MB/s =  14.341 MiB/s : 19
+
+1B:   255.936 ms = 409.703 MB/s = 390.723 MiB/s
+2B:   541.873 ms = 193.510 MB/s = 184.545 MiB/s
+3B:   881.088 ms = 119.009 MB/s = 113.496 MiB/s
+4B:  1109.862 ms =  94.478 MB/s =  90.101 MiB/s
