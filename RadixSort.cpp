@@ -7,9 +7,11 @@
 template <typename Key, typename Data, int SortBase, int SortBits, bool HasData=true>
 void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *OutData, size_t size)
 {
-    const size_t SortBins = 1<<SortBits;
+    constexpr size_t SortBins = size_t(1) << SortBits,  FirstByte = SortBase/8,  FirstBit = SortBase%8;
+    static_assert(FirstBit+SortBits<=sizeof(size_t)*8, "Sorting key is too wide for key() function below");
+
     // Function returning value of key
-    auto key = [&] (const Key &p) {return (*(uint64_t*)&p >> SortBase) % SortBins;};
+    auto key = [&] (const Key &p) {return (*(size_t*)(FirstByte+(char*)&p) >> FirstBit) % SortBins;};
 
     // Histogram keys into cnt[]
     size_t cnt[SortBins] = {0};  auto p = InKey;
