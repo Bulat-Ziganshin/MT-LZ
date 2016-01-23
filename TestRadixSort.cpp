@@ -11,7 +11,7 @@ void BENCHMARK (Key *keys, Data *data, Key *outkeys, Data *outdata, size_t size)
 
     for (size_t i=0; i<size; i++)
         keys[i] = i*123456791;
-    printf("%2d: ", Bits, int(size>>20));
+    printf("%2d: ", Bits);
     t.Start();
 //    RadixSortPass<Key,Data,0,Bits> (keys, data, outkeys, outdata, size);
     RadixSortPass<Key,0,Bits> (keys, outkeys, size);
@@ -47,10 +47,10 @@ int main()
     printf("\n");
     for (int Bytes=1; Bytes<=4; Bytes++)
     {
-        Timer t;  double speed;  //int Bytes=4;
+        Timer t;  double speed;
         for (size_t i=0; i<size; i++)
             keys[i] = i*123456791;
-        printf("%1dB: ", Bytes, int(size>>20));
+        printf("%1dB: ", Bytes);
         t.Start();
         RadixSort (keys, outkeys, size, 0, Bytes);
         t.Stop();  speed = size/(t.Elapsed()/1000);

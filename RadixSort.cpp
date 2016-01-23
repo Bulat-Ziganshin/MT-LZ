@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <memory.h>
-#include <x86intrin.h>
 #include "Common.h"
 
 // Radix-sort key+data
@@ -27,7 +26,7 @@ void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *Out
 
     // Fill OutKey & OutData
     const size_t N = CACHE_ROW/sizeof(Key);
-    Key TempKey[SortBins*N];  Data TempData[HasData? SortBins*N : 0];
+    Key TempKey[SortBins*N];  Data TempData [HasData? SortBins*N : 1];
     for (size_t i=0; i<size; i++)
     {
         auto bin = key(InKey[i]);
