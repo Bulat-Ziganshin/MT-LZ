@@ -19,10 +19,10 @@ void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *Out
         cnt[key(InKey[i])]++;
 
     // Inclusive scan of cnt[] => compute first output position for every bin
-    for (size_t i=0,sum=0; i<SortBins; i++)
+    for (size_t bin=0,sum=0; bin<SortBins; bin++)
     {
-        auto tmp = sum + cnt[i];
-        cnt[i] = sum;
+        auto tmp = sum + cnt[bin];
+        cnt[bin] = sum;
         sum = tmp;
     }
 
@@ -53,6 +53,17 @@ void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *Out
                 memcpy (OutData+out, TempData+index, N*sizeof(Data));
         }
         cnt[bin]++;
+    }
+
+    // Save data remainder from TempKey/TempData
+    for (size_t bin=0; bin<SortBins; bin++)
+    {
+        auto first_index = bin*N + (bin==0 || (cnt[bin-1]/N < cnt[bin]/N)? 0 : cnt[bin-1]%N);   // first item to save
+        auto last_index  = bin*N + cnt[bin]%N;   // last item to save
+        auto items       = last_index - first_index;
+        memcpy (OutKey+cnt[bin]-items, TempKey+first_index, items*sizeof(Key));
+        if (HasData)
+            memcpy (OutData+cnt[bin]-items, TempData+first_index, items*sizeof(Key));
     }
 }
 
