@@ -21,7 +21,7 @@ void BENCHMARK (Key *keys, Data *data, Key *outkeys, Data *outdata, size_t size)
 
 int main()
 {
-    const uint64_t size = uint64_t(100)<<20;
+    const size_t size = uint64_t(100)<<20;
     using Key = uint64_t;  using Data = uint32_t;
     auto keys = new Key [size],  outkeys = new Key [size];
     auto data = new Data[size],  outdata = new Data[size];
@@ -50,7 +50,7 @@ int main()
         Timer t;  double speed;
         for (size_t i=0; i<size; i++)
             keys[i] = i*123456791;
-        printf("%1dB: ", Bytes);
+        printf("%dB: ", Bytes);
         t.Start();
         RadixSort (keys, outkeys, size, 0, Bytes);
         t.Stop();  speed = size/(t.Elapsed()/1000);

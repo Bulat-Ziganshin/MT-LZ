@@ -327,3 +327,101 @@ C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadix
 2B:   541.873 ms = 193.510 MB/s = 184.545 MiB/s
 3B:   881.088 ms = 119.009 MB/s = 113.496 MiB/s
 4B:  1109.862 ms =  94.478 MB/s =  90.101 MiB/s
+
+
+
+C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadixSort.cpp -o TestRadixSort64.exe && p64.exe -pr -tb TestRadixSort64.exe
+ 4:  1150.238 ms =  91.162 MB/s =  86.939 MiB/s :  4
+ 5:  1038.579 ms = 100.963 MB/s =  96.285 MiB/s :  5                                        NaiveRadixSortPass - 64-bit key
+ 6:  1271.398 ms =  82.474 MB/s =  78.654 MiB/s :  6
+ 7:  1498.787 ms =  69.962 MB/s =  66.721 MiB/s :  7
+ 8:  1563.388 ms =  67.071 MB/s =  63.964 MiB/s :  8
+ 9:  1546.256 ms =  67.814 MB/s =  64.672 MiB/s :  9
+10:  1506.768 ms =  69.591 MB/s =  66.367 MiB/s : 10
+11:  1812.585 ms =  57.850 MB/s =  55.170 MiB/s : 11
+12:  1865.496 ms =  56.209 MB/s =  53.605 MiB/s : 12
+13:  2073.167 ms =  50.578 MB/s =  48.235 MiB/s : 13
+14:  2238.625 ms =  46.840 MB/s =  44.670 MiB/s : 14
+15:  2563.560 ms =  40.903 MB/s =  39.008 MiB/s : 15
+16:  2602.647 ms =  40.289 MB/s =  38.422 MiB/s : 16
+17:  2905.385 ms =  36.091 MB/s =  34.419 MiB/s : 17
+18:  7503.275 ms =  13.975 MB/s =  13.328 MiB/s : 18
+19:  9952.281 ms =  10.536 MB/s =  10.048 MiB/s : 19
+
+1B:  1561.916 ms =  67.134 MB/s =  64.024 MiB/s
+2B:  3134.045 ms =  33.458 MB/s =  31.908 MiB/s
+3B:  4620.153 ms =  22.696 MB/s =  21.644 MiB/s
+4B:  5896.557 ms =  17.783 MB/s =  16.959 MiB/s
+
+C:\!FreeArc\public\MT-LZ>g++ -std=c++11 -m64 -O3 -Wl,--stack,104857600 TestRadixSort.cpp -o TestRadixSort64.exe && p64.exe -pr -tb TestRadixSort64.exe
+ 4:   978.504 ms = 107.161 MB/s = 102.197 MiB/s :  4
+ 5:   948.463 ms = 110.555 MB/s = 105.434 MiB/s :  5                                        NaiveRadixSortPass - 32-bit key
+ 6:  1172.921 ms =  89.399 MB/s =  85.257 MiB/s :  6
+ 7:  1496.141 ms =  70.085 MB/s =  66.839 MiB/s :  7
+ 8:  1491.814 ms =  70.289 MB/s =  67.032 MiB/s :  8
+ 9:  1452.780 ms =  72.177 MB/s =  68.834 MiB/s :  9
+10:  1494.093 ms =  70.181 MB/s =  66.930 MiB/s : 10
+11:  1664.098 ms =  63.012 MB/s =  60.093 MiB/s : 11
+12:  1734.525 ms =  60.453 MB/s =  57.653 MiB/s : 12
+13:  1892.817 ms =  55.398 MB/s =  52.831 MiB/s : 13
+14:  2145.231 ms =  48.879 MB/s =  46.615 MiB/s : 14
+15:  2322.281 ms =  45.153 MB/s =  43.061 MiB/s : 15
+16:  2330.546 ms =  44.993 MB/s =  42.908 MiB/s : 16
+17:  2589.783 ms =  40.489 MB/s =  38.613 MiB/s : 17
+18:  4546.410 ms =  23.064 MB/s =  21.995 MiB/s : 18
+19:  7355.553 ms =  14.256 MB/s =  13.595 MiB/s : 19
+
+1B:  1485.502 ms =  70.587 MB/s =  67.317 MiB/s
+2B:  2990.133 ms =  35.068 MB/s =  33.443 MiB/s
+3B:  4419.459 ms =  23.726 MB/s =  22.627 MiB/s
+4B:  5467.152 ms =  19.180 MB/s =  18.291 MiB/s
+
+
+
+
+
+
+
+
+
+
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingTransform64.exe z:\e8
+Sorting 95 MiB
+0B:   798.263 ms = 125.272 MB/s = 119.469 MiB/s
+1B:   596.789 ms = 167.563 MB/s = 159.801 MiB/s
+2B:   871.527 ms = 114.741 MB/s = 109.426 MiB/s
+3B:  1304.119 ms =  76.680 MB/s =  73.128 MiB/s
+4B:  1702.957 ms =  58.721 MB/s =  56.001 MiB/s
+5B:  2039.769 ms =  49.025 MB/s =  46.754 MiB/s
+6B:  2422.947 ms =  41.272 MB/s =  39.360 MiB/s
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingTransform64.exe M:\SortingTransform\random
+Sorting 95 MiB
+0B:   836.589 ms = 119.533 MB/s = 113.996 MiB/s
+1B:   530.447 ms = 188.520 MB/s = 179.787 MiB/s
+2B:   865.468 ms = 115.544 MB/s = 110.192 MiB/s
+3B:  1224.144 ms =  81.690 MB/s =  77.905 MiB/s
+4B:  1544.840 ms =  64.732 MB/s =  61.733 MiB/s
+5B:  1924.991 ms =  51.948 MB/s =  49.542 MiB/s
+6B:  2249.646 ms =  44.451 MB/s =  42.392 MiB/s
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingTransform64.exe z:\100m
+Sorting 95 MiB
+0B:   788.174 ms = 126.875 MB/s = 120.998 MiB/s
+1B:   545.325 ms = 183.377 MB/s = 174.882 MiB/s
+2B:   981.444 ms = 101.891 MB/s =  97.171 MiB/s
+3B:  1361.337 ms =  73.457 MB/s =  70.054 MiB/s
+4B:  1755.109 ms =  56.977 MB/s =  54.337 MiB/s
+5B:  2099.094 ms =  47.640 MB/s =  45.433 MiB/s
+6B:  2543.121 ms =  39.322 MB/s =  37.500 MiB/s
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingTransform64.exe z:\boost
+Sorting 61 MiB
+0B:   487.778 ms = 132.652 MB/s = 126.507 MiB/s
+1B:   357.521 ms = 180.982 MB/s = 172.598 MiB/s
+2B:   580.095 ms = 111.542 MB/s = 106.375 MiB/s
+3B:   865.587 ms =  74.753 MB/s =  71.290 MiB/s
+4B:  1137.691 ms =  56.874 MB/s =  54.239 MiB/s
+5B:  1373.504 ms =  47.109 MB/s =  44.927 MiB/s
+6B:  1597.514 ms =  40.503 MB/s =  38.627 MiB/s

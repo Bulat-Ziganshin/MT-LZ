@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <memory.h>
+#include <tuple>
+#include <utility>
 #include "Common.h"
 
 template <typename Key, typename Data, int SortBase, int SortBits, bool HasData=true>
@@ -9,7 +11,7 @@ class RadixSortImplementation
     static constexpr size_t SortBins = size_t(1) << SortBits,  FirstByte = SortBase/8,  FirstBit = SortBase%8;
     size_t cnt[SortBins] = {0};
     // Function computing the sorting key
-    size_t key (const Key &p) {return (*(size_t*)(FirstByte+(char*)&p) >> FirstBit) % SortBins;};
+    size_t key (const Key &p) {return (*(size_t*)(FirstByte+(char*)&p) >> FirstBit) % SortBins;}
 
 public:
     RadixSortPass()
@@ -91,7 +93,7 @@ public:
 };
 
 
-// Radix-sort key+data
+// Radix-sort of key+data
 template <typename Key, typename Data, int SortBase, int SortBits, bool HasData=true>
 void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *OutData, size_t size)
 {
@@ -108,26 +110,51 @@ void RadixSortPass (const Key *InKey, Key *OutKey, size_t size)
 }
 
 
-// Multi-pass radix-sort key+data
+// Multi-pass radix-sort of key+data
 template <typename Key, typename Data, bool HasData=true>
-void RadixSort (const Key *InKey, const Data *InData, Key *OutKey, Data *OutData, size_t size, int FirstSortByte, int SortBytes)
+std::tuple<Key*,Data*,Key*,Data*>
+RadixSort (Key *InKey, Data *InData, Key *OutKey, Data *OutData, size_t size, int FirstSortByte, int SortBytes)
 {
     auto First = FirstSortByte;
     auto Last  = First+SortBytes;
-    if (First<=7 && 7<Last)  RadixSortPass<Key,Data,56,8,HasData> (InKey, InData, OutKey, OutData, size);
-    if (First<=6 && 6<Last)  RadixSortPass<Key,Data,48,8,HasData> (InKey, InData, OutKey, OutData, size);
-    if (First<=5 && 5<Last)  RadixSortPass<Key,Data,40,8,HasData> (InKey, InData, OutKey, OutData, size);
-    if (First<=4 && 4<Last)  RadixSortPass<Key,Data,32,8,HasData> (InKey, InData, OutKey, OutData, size);
-    if (First<=3 && 3<Last)  RadixSortPass<Key,Data,24,8,HasData> (InKey, InData, OutKey, OutData, size);
-    if (First<=2 && 2<Last)  RadixSortPass<Key,Data,16,8,HasData> (InKey, InData, OutKey, OutData, size);
-    if (First<=1 && 1<Last)  RadixSortPass<Key,Data, 8,8,HasData> (InKey, InData, OutKey, OutData, size);
-    if (First<=0 && 0<Last)  RadixSortPass<Key,Data, 0,8,HasData> (InKey, InData, OutKey, OutData, size);
+    if (First<=7 && 7<Last)   RadixSortPass<Key,Data,56,8,HasData> (InKey, InData, OutKey, OutData, size),  std::swap(InKey,OutKey),  std::swap(InData,OutData);
+    if (First<=6 && 6<Last)   RadixSortPass<Key,Data,48,8,HasData> (InKey, InData, OutKey, OutData, size),  std::swap(InKey,OutKey),  std::swap(InData,OutData);
+    if (First<=5 && 5<Last)   RadixSortPass<Key,Data,40,8,HasData> (InKey, InData, OutKey, OutData, size),  std::swap(InKey,OutKey),  std::swap(InData,OutData);
+    if (First<=4 && 4<Last)   RadixSortPass<Key,Data,32,8,HasData> (InKey, InData, OutKey, OutData, size),  std::swap(InKey,OutKey),  std::swap(InData,OutData);
+    if (First<=3 && 3<Last)   RadixSortPass<Key,Data,24,8,HasData> (InKey, InData, OutKey, OutData, size),  std::swap(InKey,OutKey),  std::swap(InData,OutData);
+    if (First<=2 && 2<Last)   RadixSortPass<Key,Data,16,8,HasData> (InKey, InData, OutKey, OutData, size),  std::swap(InKey,OutKey),  std::swap(InData,OutData);
+    if (First<=1 && 1<Last)   RadixSortPass<Key,Data, 8,8,HasData> (InKey, InData, OutKey, OutData, size),  std::swap(InKey,OutKey),  std::swap(InData,OutData);
+    if (First<=0 && 0<Last)   RadixSortPass<Key,Data, 0,8,HasData> (InKey, InData, OutKey, OutData, size),  std::swap(InKey,OutKey),  std::swap(InData,OutData);
+    return std::make_tuple(InKey, InData, OutKey, OutData);
 }
 
 
 // Multi-pass key-only radix sort
 template <typename Key>
-void RadixSort (const Key *InKey, Key *OutKey, size_t size, int FirstSortByte, int SortBytes)
+std::pair<Key*,Key*>
+RadixSort (Key *InKey, Key *OutKey, size_t size, int FirstSortByte, int SortBytes)
 {
-    RadixSort<Key,Key,false> (InKey, InKey, OutKey, OutKey, size, FirstSortByte, SortBytes);
+    std::tie(InKey, std::ignore, OutKey, std::ignore)  =  RadixSort<Key,Key,false> (InKey, InKey, OutKey, OutKey, size, FirstSortByte, SortBytes);
+    return std::make_pair(InKey,OutKey);
+}
+
+
+// Sorting transform
+template <typename Key>
+size_t SortingTransform (const void *buf, void *outbuf, size_t size, int order, Key *InKey, Key *OutKey)
+{
+    for (size_t i = 0; i < size; i++)
+        InKey[i] = *(Key*)(i + (char*)buf) % (Key(1)<<56);
+    InKey[0] |= (Key(1)<<56);   // mark first entry
+
+    std::tie(InKey,OutKey)  =  RadixSort (InKey, OutKey, size, 1, order);
+
+    size_t index = -1;
+    for (size_t i = 0; i < size; i++)
+    {
+        ((char*)outbuf)[i] = *(char*)(InKey+i);
+        if (InKey[i] >= (Key(1)<<56))
+            index = i;  // it was the first entry
+    }
+    return index;
 }
