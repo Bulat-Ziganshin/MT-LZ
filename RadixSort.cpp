@@ -33,6 +33,19 @@ public:
         }
     }
 
+    void NaiveRadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *OutData, size_t size)
+    {
+        // Fill OutKey & OutData
+        for (size_t i=0; i<size; i++)
+        {
+            auto bin = key(InKey[i]);
+            OutKey[cnt[bin]] = InKey[i];
+            if (HasData)
+                OutData[cnt[bin]] = InData[i];
+            cnt[bin]++;
+        }
+    }
+
     void RadixSortPass (const Key *InKey, const Data *InData, Key *OutKey, Data *OutData, size_t size)
     {
         // Fill OutKey & OutData
