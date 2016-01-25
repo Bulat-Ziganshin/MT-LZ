@@ -28,7 +28,5 @@ int main (int argc, char**argv)
         t.Stop();  speed = size/(t.Elapsed()/1000);
         printf("%9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n", t.Elapsed(), speed/1e6, speed/(1<<20));
     }
-
-    delete[] buf;
     return 0;
 }

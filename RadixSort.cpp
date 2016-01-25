@@ -145,7 +145,7 @@ size_t SortingTransform (const void *buf, void *outbuf, size_t size, int order, 
 {
     for (size_t i = 0; i < size; i++)
         InKey[i] = *(Key*)(i + (char*)buf) % (Key(1)<<56);
-    InKey[0] |= (Key(1)<<56);   // mark first entry
+    InKey[0] |= (Key(1)<<56);   // mark the first entry
 
     std::tie(InKey,OutKey)  =  RadixSort (InKey, OutKey, size, 1, order);
 
