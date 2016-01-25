@@ -1,0 +1,77 @@
+Sorting 100 MiB:    356.885 ms = 293.813 MB/s = 280.202 MiB/s
+
+C:\>p64.exe -pr -tb TestSortingLZ64.exe z:\base-mx.arc                 sorting 64-bit key only
+1B: 104447542 matches;    338.953 ms = 309.358 MB/s = 295.026 MiB/s
+2B: 104382729 matches;    720.636 ms = 145.507 MB/s = 138.766 MiB/s
+3B:  87771133 matches;   1104.015 ms =  94.978 MB/s =  90.578 MiB/s
+4B:   1267432 matches;   1413.582 ms =  74.179 MB/s =  70.742 MiB/s
+5B:      5051 matches;   1863.674 ms =  56.264 MB/s =  53.657 MiB/s
+6B:        29 matches;   2072.152 ms =  50.603 MB/s =  48.259 MiB/s
+7B:         1 matches;   2494.263 ms =  42.040 MB/s =  40.092 MiB/s
+8B:         1 matches;   2792.215 ms =  37.554 MB/s =  35.814 MiB/s
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingLZ64.exe z:\e9
+1B:  86006815 matches;    353.737 ms = 296.428 MB/s = 282.696 MiB/s
+2B:  63531598 matches;    754.987 ms = 138.887 MB/s = 132.453 MiB/s
+3B:  50710418 matches;   1148.807 ms =  91.275 MB/s =  87.047 MiB/s
+4B:  44096783 matches;   1607.951 ms =  65.212 MB/s =  62.191 MiB/s
+5B:  39979341 matches;   1897.337 ms =  55.266 MB/s =  52.705 MiB/s
+6B:  36460911 matches;   2386.312 ms =  43.941 MB/s =  41.906 MiB/s
+7B:  33052695 matches;   2785.118 ms =  37.649 MB/s =  35.905 MiB/s
+8B:  85512792 matches;   3172.896 ms =  33.048 MB/s =  31.517 MiB/s
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingLZ64.exe z:\oo
+1B:  67548667 matches;    426.933 ms = 245.606 MB/s = 234.229 MiB/s
+2B:  35983443 matches;    756.826 ms = 138.549 MB/s = 132.131 MiB/s
+3B:  21606768 matches;   1159.340 ms =  90.446 MB/s =  86.256 MiB/s
+4B:  16868335 matches;   1598.062 ms =  65.615 MB/s =  62.576 MiB/s
+5B:  14955987 matches;   1985.999 ms =  52.798 MB/s =  50.353 MiB/s
+6B:  13318244 matches;   2463.553 ms =  42.564 MB/s =  40.592 MiB/s
+7B:  12092962 matches;   2836.598 ms =  36.966 MB/s =  35.253 MiB/s
+8B:  91298331 matches;   3249.975 ms =  32.264 MB/s =  30.769 MiB/s
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingLZ64.exe z:\1g
+1B:  68318626 matches;    355.083 ms = 295.304 MB/s = 281.624 MiB/s
+2B:  54942388 matches;    773.716 ms = 135.525 MB/s = 129.246 MiB/s
+3B:  43873455 matches;   1216.591 ms =  86.190 MB/s =  82.197 MiB/s
+4B:  31020659 matches;   1603.144 ms =  65.407 MB/s =  62.377 MiB/s
+5B:  23039715 matches;   1966.849 ms =  53.312 MB/s =  50.843 MiB/s
+6B:  15537627 matches;   2411.787 ms =  43.477 MB/s =  41.463 MiB/s
+7B:  11296874 matches;   2820.788 ms =  37.173 MB/s =  35.451 MiB/s
+8B:  60984031 matches;   3221.938 ms =  32.545 MB/s =  31.037 MiB/s
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingLZ64.exe z:\4g.srep
+1B:  71418906 matches;    359.155 ms = 291.956 MB/s = 278.431 MiB/s
+2B:  58070718 matches;    757.100 ms = 138.499 MB/s = 132.083 MiB/s
+3B:  47555595 matches;   1140.571 ms =  91.934 MB/s =  87.675 MiB/s
+4B:  34291573 matches;   1577.498 ms =  66.471 MB/s =  63.392 MiB/s
+5B:  25671199 matches;   2024.372 ms =  51.798 MB/s =  49.398 MiB/s
+6B:  17353936 matches;   2401.941 ms =  43.655 MB/s =  41.633 MiB/s
+7B:  12550661 matches;   2833.628 ms =  37.005 MB/s =  35.290 MiB/s
+8B:  52165175 matches;   3295.167 ms =  31.822 MB/s =  30.347 MiB/s
+
+
+
+
+
+
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingLZ64.exe z:\e9     sorting 64-bit key + 32-bit pos
+1B:  86006815 matches;    441.628 ms = 237.434 MB/s = 226.435 MiB/s
+2B:  63531598 matches;    909.383 ms = 115.306 MB/s = 109.965 MiB/s
+3B:  50710418 matches;   1267.055 ms =  82.757 MB/s =  78.923 MiB/s
+4B:  44096783 matches;   1773.786 ms =  59.115 MB/s =  56.377 MiB/s
+5B:  39979341 matches;   2249.431 ms =  46.615 MB/s =  44.456 MiB/s
+6B:  36460911 matches;   2758.477 ms =  38.013 MB/s =  36.252 MiB/s
+7B:  33052695 matches;   3183.598 ms =  32.937 MB/s =  31.411 MiB/s
+8B:  85512792 matches;   3621.199 ms =  28.957 MB/s =  27.615 MiB/s
+
+C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingLZ64.exe z:\4g.srep
+1B:  71418906 matches;    487.361 ms = 215.154 MB/s = 205.187 MiB/s
+2B:  58070718 matches;    933.299 ms = 112.352 MB/s = 107.147 MiB/s
+3B:  47555595 matches;   1396.092 ms =  75.108 MB/s =  71.629 MiB/s
+4B:  34291573 matches;   1797.135 ms =  58.347 MB/s =  55.644 MiB/s
+5B:  25671199 matches;   2270.094 ms =  46.191 MB/s =  44.051 MiB/s
+6B:  17353936 matches;   2749.550 ms =  38.136 MB/s =  36.370 MiB/s
+7B:  12550661 matches;   3296.357 ms =  31.810 MB/s =  30.337 MiB/s
+8B:  52165175 matches;   3730.861 ms =  28.105 MB/s =  26.803 MiB/s

@@ -26,19 +26,26 @@ int main (int argc, char**argv)
         for (size_t i=0; i<size/sizeof(uint32_t); i++)
             ((uint32_t*)buf)[i] = i*123456791;
     }
-    using Key = uint64_t;
-    auto InKey = new Key[size],  OutKey = new Key[size];
-    printf("Sorting %d MiB\n", int(size>>20));
+    using Key = uint64_t;  using Data = uint32_t;
+    auto InKey  = new Key [size],  OutKey  = new Key [size];
+    auto InData = new Data[size],  OutData = new Data[size];
+    printf("Sorting %d MiB", int(size>>20));
 
-    for (int order=0; order<=6; order++)
+    for (int order=0; order<=8; order++)
     {
         Timer t;  double speed;
-        printf("%dB: ", order);
-        for (size_t i = 0; i < size; i++)
-            InKey[i] = *(Key*)(buf+i);
         t.Start();
-        std::tie(InKey,OutKey)  =  RadixSort (InKey, OutKey, size, 0, order?order:1);
+        for (size_t i = 0; i < size; i++)
+            InKey[i] = *(Key*)(buf+i),  InData[i] = i;
         t.Stop();  speed = size/(t.Elapsed()/1000);
+        if (!order)  printf(":  %9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n",
+                            t.Elapsed(), speed/1e6, speed/(1<<20));
+
+        t.Start();
+        //std::tie(InKey,OutKey)  =  RadixSort (InKey, OutKey, size, 0, order?order:1);
+        std::tie(InKey,InData,OutKey,OutData)  =  RadixSort (InKey, InData, OutKey, OutData, size, 0, order?order:1);
+        t.Stop();  speed = size/(t.Elapsed()/1000);
+        if (!order)  continue;
 
         size_t matches = 0;
         for (size_t i = 0; i < size; i++)
@@ -46,8 +53,8 @@ int main (int argc, char**argv)
             if (common_bytes(InKey[i],InKey[i+1]) == order)
                 matches++;
         }
-
-        printf("%9d matches;  %9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n", int(matches), t.Elapsed(), speed/1e6, speed/(1<<20));
+        printf("%dB: %9d matches;  %9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n",
+                order, int(matches), t.Elapsed(), speed/1e6, speed/(1<<20));
     }
     return 0;
 }
