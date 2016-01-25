@@ -29,32 +29,47 @@ int main (int argc, char**argv)
     using Key = uint64_t;  using Data = uint32_t;
     auto InKey  = new Key [size],  OutKey  = new Key [size];
     auto InData = new Data[size],  OutData = new Data[size];
-    printf("Sorting %d MiB", int(size>>20));
+    printf("Checking %d MiB", int(size>>20));
+    if (argc > 1)
+        printf(" of %s", argv[1]);
 
-    for (int order=0; order<=8; order++)
+    // Warm up the data
+    RadixSort (InKey, InData, OutKey, OutData, size, 0, 1);
+
+    for (int order=1; order<=8; order++)
     {
         Timer t;  double speed;
         t.Start();
         for (size_t i = 0; i < size; i++)
             InKey[i] = *(Key*)(buf+i),  InData[i] = i;
         t.Stop();  speed = size/(t.Elapsed()/1000);
-        if (!order)  printf(":  %9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n",
-                            t.Elapsed(), speed/1e6, speed/(1<<20));
+        if (order==1)  printf(":  %9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n",
+                              t.Elapsed(), speed/1e6, speed/(1<<20));
 
         t.Start();
-        //std::tie(InKey,OutKey)  =  RadixSort (InKey, OutKey, size, 0, order?order:1);
-        std::tie(InKey,InData,OutKey,OutData)  =  RadixSort (InKey, InData, OutKey, OutData, size, 0, order?order:1);
+        //std::tie(InKey,OutKey)  =  RadixSort (InKey, OutKey, size, 0, order);
+        std::tie(InKey,InData,OutKey,OutData)  =  RadixSort (InKey, InData, OutKey, OutData, size, 0, order);
         t.Stop();  speed = size/(t.Elapsed()/1000);
-        if (!order)  continue;
 
-        size_t matches = 0;
+        size_t matches = 0,  bins = 0,  max_bin = 0,  start = 0,  total_matches = 0,  cmps = 0,
+               DEPTH = 32;
         for (size_t i = 0; i < size; i++)
         {
-            if (common_bytes(InKey[i],InKey[i+1]) == order)
-                matches++;
+            auto cb = common_bytes(InKey[i], InKey[i+1]);
+            if (cb == order)  matches++;
+            if (cb >= order)  total_matches++;
+            if (cb <  order)
+            {
+                bins++;
+                if (i-start > max_bin)  max_bin = i-start;
+                start = i;
+            }
+            cmps += std::min(i-start, DEPTH);
         }
-        printf("%dB: %9d matches;  %9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n",
-                order, int(matches), t.Elapsed(), speed/1e6, speed/(1<<20));
+        printf("%dB: %9d matches, %9d total, %10.0lf cmps; %9d bins, %9d maxbin;  ",
+                order, int(matches), int(total_matches), double(cmps), int(bins), int(max_bin));
+        printf("%9.3lf ms = %7.3lf MB/s = %7.3lf MiB/s\n",
+                t.Elapsed(), speed/1e6, speed/(1<<20));
     }
     return 0;
 }

@@ -75,3 +75,56 @@ C:\!FreeArc\public\MT-LZ>p64.exe -pr -tb TestSortingLZ64.exe z:\4g.srep
 6B:  17353936 matches;   2749.550 ms =  38.136 MB/s =  36.370 MiB/s
 7B:  12550661 matches;   3296.357 ms =  31.810 MB/s =  30.337 MiB/s
 8B:  52165175 matches;   3730.861 ms =  28.105 MB/s =  26.803 MiB/s
+
+
+
+
+Checking 100 MiB of z:\4g.srep:    188.972 ms = 554.886 MB/s = 529.180 MiB/s
+1B:  71418906 matches, 104857344 total, 3355308000 cmps;       256 bins,  17622307 maxbin;    453.392 ms = 231.274 MB/s = 220.560 MiB/s
+2B:  58070718 matches, 104792064 total, 3320840160 cmps;     65536 bins,   8057393 maxbin;    929.383 ms = 112.825 MB/s = 107.598 MiB/s
+3B:  47555595 matches,  98628922 total, 2673425528 cmps;   6228678 bins,   5166193 maxbin;   1432.480 ms =  73.200 MB/s =  69.809 MiB/s
+4B:  34291573 matches,  87265952 total, 2056052912 cmps;  17591648 bins,   3667698 maxbin;   1853.881 ms =  56.561 MB/s =  53.941 MiB/s
+5B:  25671199 matches,  76184696 total, 1576740079 cmps;  28672904 bins,   3152458 maxbin;   2420.145 ms =  43.327 MB/s =  41.320 MiB/s
+6B:  17353936 matches,  65904962 total, 1220422334 cmps;  38952638 bins,   2855106 maxbin;   2792.835 ms =  37.545 MB/s =  35.806 MiB/s
+7B:  12550661 matches,  58023550 total,  996883430 cmps;  46834050 bins,   2623854 maxbin;   3241.456 ms =  32.349 MB/s =  30.850 MiB/s
+8B:  52165175 matches,  52165175 total,  851071713 cmps;  52692425 bins,   2427906 maxbin;   3649.444 ms =  28.732 MB/s =  27.401 MiB/s
+
+Checking 100 MiB of z:\1g:    184.151 ms = 569.412 MB/s = 543.033 MiB/s
+1B:  68318626 matches, 104857344 total, 3355308000 cmps;       256 bins,  20047883 maxbin;    443.823 ms = 236.260 MB/s = 225.315 MiB/s
+2B:  54942388 matches, 104792064 total, 3320840160 cmps;     65536 bins,  10706716 maxbin;    915.256 ms = 114.566 MB/s = 109.259 MiB/s
+3B:  43873455 matches,  99209007 total, 2694736722 cmps;   5648593 bins,   7977089 maxbin;   1399.823 ms =  74.908 MB/s =  71.438 MiB/s
+4B:  31020659 matches,  89563440 total, 2129158418 cmps;  15294160 bins,   6535330 maxbin;   1854.641 ms =  56.538 MB/s =  53.919 MiB/s
+5B:  23039715 matches,  80437888 total, 1696655060 cmps;  24419712 bins,   6020328 maxbin;   2425.908 ms =  43.224 MB/s =  41.222 MiB/s
+6B:  15537627 matches,  72066898 total, 1377265722 cmps;  32790702 bins,   5717040 maxbin;   2867.759 ms =  36.564 MB/s =  34.870 MiB/s
+7B:  11296874 matches,  65700724 total, 1176225134 cmps;  39156876 bins,   5478635 maxbin;   3245.352 ms =  32.310 MB/s =  30.813 MiB/s
+8B:  60984031 matches,  60984031 total, 1043219618 cmps;  43873569 bins,   5275933 maxbin;   3690.574 ms =  28.412 MB/s =  27.096 MiB/s
+
+Checking 100 MiB of z:\e9:    181.314 ms = 578.319 MB/s = 551.528 MiB/s
+1B:  86006815 matches, 104857395 total, 3355335322 cmps;       205 bins,  14162588 maxbin;    460.240 ms = 227.833 MB/s = 217.278 MiB/s
+2B:  63531598 matches, 104838921 total, 3348912975 cmps;     18679 bins,   2054048 maxbin;    853.827 ms = 122.809 MB/s = 117.120 MiB/s
+3B:  50710418 matches, 104605864 total, 3303801576 cmps;    251736 bins,   1016408 maxbin;   1390.280 ms =  75.422 MB/s =  71.928 MiB/s
+4B:  44096783 matches, 103635525 total, 3161395943 cmps;   1222075 bins,    837309 maxbin;   1801.010 ms =  58.222 MB/s =  55.524 MiB/s
+5B:  39979341 matches, 101254291 total, 2915156276 cmps;   3603309 bins,    736524 maxbin;   2237.122 ms =  46.872 MB/s =  44.700 MiB/s
+6B:  36460911 matches,  97436228 total, 2591086216 cmps;   7421372 bins,    199203 maxbin;   2673.024 ms =  39.228 MB/s =  37.411 MiB/s
+7B:  33052695 matches,  92158251 total, 2221931032 cmps;  12699349 bins,    140705 maxbin;   3189.665 ms =  32.874 MB/s =  31.351 MiB/s
+8B:  85512792 matches,  85512792 total, 1847877941 cmps;  19344808 bins,    132278 maxbin;   3565.511 ms =  29.409 MB/s =  28.046 MiB/s
+
+Checking 100 MiB of z:\oo:    186.798 ms = 561.343 MB/s = 535.339 MiB/s
+1B:  67548667 matches, 104857344 total, 3355308000 cmps;       256 bins,  11498868 maxbin;    453.773 ms = 231.079 MB/s = 220.374 MiB/s
+2B:  35983443 matches, 104792064 total, 3320840160 cmps;     65536 bins,   4235969 maxbin;    900.635 ms = 116.426 MB/s = 111.033 MiB/s
+3B:  21606768 matches, 100526790 total, 3138262714 cmps;   4330810 bins,   4192276 maxbin;   1410.257 ms =  74.354 MB/s =  70.909 MiB/s
+4B:  16868335 matches,  99088846 total, 3004522884 cmps;   5768754 bins,   4148814 maxbin;   1785.014 ms =  58.743 MB/s =  56.022 MiB/s
+5B:  14955987 matches,  97725710 total, 2826097045 cmps;   7131890 bins,   4105437 maxbin;   2265.280 ms =  46.289 MB/s =  44.145 MiB/s
+6B:  13318244 matches,  95869579 total, 2640266474 cmps;   8988021 bins,   4062073 maxbin;   2761.123 ms =  37.976 MB/s =  36.217 MiB/s
+7B:  12092962 matches,  93676876 total, 2465037264 cmps;  11180724 bins,   4018729 maxbin;   3281.314 ms =  31.956 MB/s =  30.476 MiB/s
+8B:  91298331 matches,  91298331 total, 2307956620 cmps;  13559269 bins,   3975395 maxbin;   3687.397 ms =  28.437 MB/s =  27.119 MiB/s
+
+Checking 100 MiB of z:\base-mx.arc:    176.971 ms = 592.514 MB/s = 565.065 MiB/s
+1B: 104447542 matches, 104857344 total, 3355308000 cmps;       256 bins,    481818 maxbin;    437.483 ms = 239.684 MB/s = 228.580 MiB/s
+2B: 104382729 matches, 104792064 total, 3320840160 cmps;     65536 bins,      7057 maxbin;    933.808 ms = 112.290 MB/s = 107.088 MiB/s
+3B:  87771133 matches,  88114523 total,  328215672 cmps;  16743077 bins,        61 maxbin;   1306.759 ms =  80.243 MB/s =  76.525 MiB/s
+4B:   1267432 matches,   1272471 total,    1283098 cmps; 103585129 bins,        14 maxbin;   1869.220 ms =  56.097 MB/s =  53.498 MiB/s
+5B:      5051 matches,      5082 total,       5088 cmps; 104852518 bins,         5 maxbin;   2253.678 ms =  46.527 MB/s =  44.372 MiB/s
+6B:        29 matches,        31 total,         31 cmps; 104857569 bins,         3 maxbin;   2772.040 ms =  37.827 MB/s =  36.075 MiB/s
+7B:         1 matches,         2 total,          1 cmps; 104857598 bins,         2 maxbin;   3207.163 ms =  32.695 MB/s =  31.180 MiB/s
+8B:         1 matches,         1 total,          0 cmps; 104857599 bins,         1 maxbin;   3701.970 ms =  28.325 MB/s =  27.013 MiB/s
