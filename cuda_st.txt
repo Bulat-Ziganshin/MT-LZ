@@ -1,0 +1,50 @@
+M:\SortingTransform>cuda_st.exe e8
+CUDA_ST_bsc 0.6  (c) Dell Inc.  Written by P.Skibinski
+Kernel Warmup = 1 CPU ms (100000000 KB/s)
+BSC ST3 = 863 CPU ms (115874 KB/s)
+CUDA ST3 = 247 CPU ms (404858 KB/s)
+- output of BSC_ST3 and CUDA_ST3 (3 parts) is identical (index=14896836)
+BSC ST4 = 859 CPU ms (116414 KB/s)
+CUDA ST4 = 285 CPU ms (350877 KB/s)
+- output of BSC_ST4 and CUDA_ST4 (4 parts) is identical (index=3743321)
+BSC ST5 = 1934 CPU ms (51706 KB/s)
+CUDA ST5 = 430 CPU ms (232558 KB/s)
+- output of BSC_ST5 and CUDA_ST5 (5 parts) is identical (index=6391147)
+BSC ST6 = 2537 CPU ms (39416 KB/s)
+CUDA ST6 = 501 CPU ms (199600 KB/s)
+- output of BSC_ST6 and CUDA_ST6 (5 parts) is identical (index=6391149)
+done...
+
+M:\SortingTransform>cuda_st.exe random
+CUDA_ST_bsc 0.6  (c) Dell Inc.  Written by P.Skibinski
+Kernel Warmup = 1 CPU ms (100000000 KB/s)
+BSC ST3 = 2396 CPU ms (41736 KB/s)
+CUDA ST3 = 271 CPU ms (369003 KB/s)
+- output of BSC_ST3 and CUDA_ST3 (3 parts) is identical (index=20660611)
+BSC ST4 = 3060 CPU ms (32679 KB/s)
+CUDA ST4 = 303 CPU ms (330033 KB/s)
+- output of BSC_ST4 and CUDA_ST4 (4 parts) is identical (index=7254978)
+BSC ST5 = 10816 CPU ms (9245 KB/s)
+CUDA ST5 = 447 CPU ms (223713 KB/s)
+- output of BSC_ST5 and CUDA_ST5 (5 parts) is identical (index=5631899)
+BSC ST6 = 22647 CPU ms (4415 KB/s)
+CUDA ST6 = 526 CPU ms (190114 KB/s)
+- output of BSC_ST6 and CUDA_ST6 (5 parts) is identical (index=5631899)
+done...
+
+M:\SortingTransform>cuda_st.exe z:\boost
+CUDA_ST_bsc 0.6  (c) Dell Inc.  Written by P.Skibinski
+Kernel Warmup = 1 CPU ms (64704870 KB/s)
+BSC ST3 = 561 CPU ms (115338 KB/s)
+CUDA ST3 = 156 CPU ms (414774 KB/s)
+- output of BSC_ST3 and CUDA_ST3 (2 parts) is identical (index=5744509)
+BSC ST4 = 491 CPU ms (131781 KB/s)
+CUDA ST4 = 192 CPU ms (337004 KB/s)
+- output of BSC_ST4 and CUDA_ST4 (3 parts) is identical (index=2009)
+BSC ST5 = 1010 CPU ms (64064 KB/s)
+CUDA ST5 = 273 CPU ms (237014 KB/s)
+- output of BSC_ST5 and CUDA_ST5 (3 parts) is identical (index=9407657)
+BSC ST6 = 1082 CPU ms (59801 KB/s)
+CUDA ST6 = 318 CPU ms (203474 KB/s)
+- output of BSC_ST6 and CUDA_ST6 (3 parts) is identical (index=9407657)
+done...
